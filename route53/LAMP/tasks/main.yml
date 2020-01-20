@@ -1,0 +1,42 @@
+---
+  
+          - name: yum update
+            yum: name=*
+                 state=latest 
+            become: yes 
+
+          - name: Install dependencies for WordPress
+            yum: name={{ item }} state=present 
+            with_items:
+              - httpd
+              - mariadb-server
+              - mariadb
+              - php
+              - php-mysql
+              - MySQL-python
+
+
+          - name: ensure mariadb and httpd is running 
+            systemd: name= {{ item }} state=started 
+            with_items:
+               - httpd
+               - mariadb
+                 
+          - name: start mariadb
+            shell: systemctl start mariadb
+            become: yes
+
+          - name: start httpd
+            shell: systemctl start httpd  
+            become: yes
+
+          - name: Create MariaDB database
+            mysql_db: name={{ wp_mysql_db }} state=present 
+            become: yes
+           
+          - name: Create MariaDB username and password
+            mysql_user:
+              name={{ wp_mysql_user }}
+              password={{ wp_mysql_password }}
+              priv=*.*:ALL
+            become: yes

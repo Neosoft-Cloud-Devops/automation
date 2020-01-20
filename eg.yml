@@ -1,0 +1,18 @@
+---
+- hosts: new
+  gather_facts: false
+  become: yes
+  tasks:
+          - name: see it's ip
+            debug: 
+              msg: "say hey"
+
+
+          - name: install httpd
+            yum: name=git state=present
+
+         
+          - name: service start
+            service: name=sshd state=started
+                   
+

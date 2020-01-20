@@ -1,0 +1,40 @@
+---
+         
+- name: zone to be added
+  route53_zone: 
+                region: us-east-1
+                aws_access_key: AKIA5WRIVFTK6JZGJLFV
+                aws_secret_key: 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
+                zone: wordsinfinite.ml
+                state: present
+
+
+
+
+- name: add domain name
+  route53:
+                    # region: us-east-1
+                aws_access_key: AKIA5WRIVFTK6JZGJLFV
+                aws_secret_key: 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
+                command: create     
+                state: present
+                zone: wordsinfinite.ml
+                ttl: 60
+                type: A
+                value: "{{ eip.stdout }}"
+                record: wordsinfinite.ml
+
+
+
+- name: add dns in route53
+  route53:
+                aws_access_key: AKIA5WRIVFTK6JZGJLFV
+                aws_secret_key: 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
+                command: create
+                state: present
+                zone: wordsinfinite.ml
+                ttl: 60
+                type: CNAME
+                value: wordsinfinite.ml
+                record: www.wordsinfinite.ml
+

@@ -1,0 +1,6 @@
+---
+- hosts: launched
+  become: yes
+  gather_facts: false
+  roles: 
+     - web-hosting

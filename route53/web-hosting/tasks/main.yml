@@ -1,0 +1,48 @@
+---
+
+     - name: make a directory
+       command: mkdir /var/www/wordsinfinite.ml
+     
+     - name: make a conf file
+       copy: 
+         src: /home/ansible/route53/wordsinfinite.conf.ml
+         dest: /etc/httpd/conf.d/ 
+         
+                
+       notify:
+               - restart httpd
+    
+
+
+
+# 
+#             - name: make a directory
+#               command: mkdir /var/www/wordsinfinite.ml
+#
+#
+#             - name: indexfile
+#               file:
+#                 path: /var/www/wordsinfinite.ml/index.html
+#                 state: touch
+#             
+#             - name: write something inside indexfile
+#               shell: echo >> /var/www/wordsinfinite.ml/index.html << EOF 
+#                      hello welcome to the 2020 
+#
+#
+#             - name: Copy virtual-host config file for website
+#               copy: src=/home/ansible/route53/web-hosting/templates/wordsinfinite.conf.ml.j2 dest=/var/www/wordsinfinite.conf.ml
+#               become: yes
+#
+#
+#
+#
+#             - name: make a conf file
+#               copy: 
+#                     src: /home/ansible/route53/web-hosting/templates/wordsinfinite.conf.ml.j2 
+#                     dest: /etc/httpd/conf.d/   
+#               notify: 
+#                      - restart httpd
+#            
+#         
+#

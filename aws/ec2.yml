@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  vars_files: 
+    - /home/ansible/aws/keys.yml
+
+  tasks:
+          - name: ec2 list
+            ec2_instance_facts:
+              aws_access_key: "{{ AWS_ACCESS_KEYS_ID }}"
+              aws_secret_key: "{{ AWS_SECRET_ACCESS_KEYS }}"
+              region: " {{ AWS_REGION }} "
+            register: output
+
+          - name: display
+            debug:
+                    var: output.stdout

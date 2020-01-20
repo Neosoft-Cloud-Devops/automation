@@ -1,0 +1,18 @@
+---
+
+- name: Manage Hyper-V
+  hosts:
+    - localhost
+  become: yes    
+  tasks:
+    - name: Create test.example.com VM
+      win_hyperv_guest:
+        name: test.example.com
+        generation: 1
+        memory: 256MB
+        network_switch: WAN1
+        state: present
+    - name: Remove old.example.com VM
+      win_hyperv_guest:
+        name: old.example.com
+        state: absent

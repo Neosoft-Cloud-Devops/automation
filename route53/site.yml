@@ -1,0 +1,7 @@
+---
+- include: server.yml
+- include: lamp.yml
+- include: web.yml 
+
+
+           

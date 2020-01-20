@@ -1,0 +1,16 @@
+---
+# defaults file for wp-dependencies
+wp_mysql_db: MyWP
+wp_mysql_user: wpUser
+wp_mysql_password: wpP4ss
+root_db_pass: H@rsha20!
+wp_db_host: localhost
+
+wp_db_charset: 'utf8'
+wp_db_collate: ''
+wp_table_prefix: 'wp_'
+wp_debug: false
+
+wp_fs_method: 'direct'
+wp_lang: ''
+

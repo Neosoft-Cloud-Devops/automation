@@ -1,0 +1,17 @@
+---
+- hosts: confluence
+  become: true
+  tasks:
+
+
+          - name: Get time from the system
+             shell: "date+%Y_%m_%d"
+             register: current_time
+
+
+          - name: copying the zip
+            command: scp -i "{{ current_time.stdout }}".zip <server_ip>
+            argv:
+                    chdir: /home/confluence/atlassian/application-data/confluence/backups
+
+# tasks file for confluence

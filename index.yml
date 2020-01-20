@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: false
+  tasks: 
+
+       - name: write something inside indexfile
+         shell: echo >> /home/ansible//index1.html << EOF 
+                hello 
+           
+

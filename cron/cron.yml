@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  gather_facts: false
+  become: true
+  tasks:
+       
+          - cron:
+                name: "apt-get update"       
+                job: "/usr/bin/apt-get update -y"
+                weekday: "4"
+                hour: "16"
+                minute: "59" 
+

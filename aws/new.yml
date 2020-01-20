@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  become: true
+  gather_facts: false
+  tasks:
+   - name: ip
+     shell: aws ec2 describe-instances --filter "Name=tag:Name,Values=Linux"| jq -r '.Reservations[].Instances[].PublicIpAddress' 
+     register: ec2
+
+     #   - name: new ip   
+     #     debug:
+     #          msg: "{{ item.public_ip }}"
+     #          with_items: "{{ ec2.instances }}"
+     #
+   - name: Add new instance to host group
+     add_host:
+        inventory_dir: /etc/ansible/hosts    
+        hostname: "{{ item.public_dns_name }}"
+        groupname: launched
+
+     with_items: "{{ ec2.instances }}"
+     become: yes

@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: false
+
+  tasks:
+          - name: new ip
+            shell: aws ec2 describe-instances --filter "Name=tag:Name,Values=Linux"| jq -r '.Reservations[].Instances[].PublicIpAddress' >> /home/ansible/hosts
+            register: ip
+          
+          - name: print
+            debug:
+                    msg: ip.instances
+

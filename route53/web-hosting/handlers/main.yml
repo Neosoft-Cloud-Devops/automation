@@ -1,0 +1,8 @@
+---
+
+- name: restart httpd 
+  become: true
+  service: name=httpd state=restarted
+
+
+# handlers file for web-hosting

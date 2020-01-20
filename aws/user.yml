@@ -1,0 +1,13 @@
+---
+
+- hosts: localhost
+  become: yes
+  tasks:
+       - name: copy-ssh-id
+         shell: ssh-copy-id ansible@'{{ item}}'
+         with_items:
+                  - "{{ ec2.stdout }}"
+
+
+              
+

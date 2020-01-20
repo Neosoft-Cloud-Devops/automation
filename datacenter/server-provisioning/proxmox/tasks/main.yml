@@ -1,0 +1,13 @@
+---
+
+ - name: create vm
+   proxmox_kvm:
+             api_user: root@pam
+             api_password: '%juD\LTNhVES6z32'
+             api_host: 103.224.242.111
+             node: RB71124
+             name: test12
+             state: started
+             
+
+

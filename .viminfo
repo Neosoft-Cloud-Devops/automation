@@ -10,11 +10,36 @@
 
 # hlsearch on (H) or off (h):
 ~h
+# Last Search Pattern:
+~Msle0/\<name\>
+
+# Last Substitute Search Pattern:
+~MSle0~&new_servers
+
+# Last Substitute String:
+$lc_servers
+
 # Command Line History (newest to oldest):
 :wq!
-|2,0,1575291622,,"wq!"
+|2,0,1579500182,,"wq!"
+:q!
+|2,0,1577783376,,"q!"
+:%s/new_servers/lc_servers/g
+|2,0,1577710923,,"%s/new_servers/lc_servers/g"
+:%s/new
+|2,0,1577710834,,"%s/new"
+:q
+|2,0,1576507002,,"q"
 
 # Search String History (newest to oldest):
+? new_servers
+|2,1,1577710923,,"new_servers"
+? new
+|2,1,1577710834,,"new"
+? \<name\>
+|2,1,1576591163,,"\\<name\\>"
+? \<insertafter\>
+|2,1,1576568908,,"\\<insertafter\\>"
 
 # Expression History (newest to oldest):
 
@@ -23,235 +48,455 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
-""-	CHAR	0
+""1	LINE	0
+	   #           
+|3,1,1,1,1,0,1577720743,"   #           "
+"2	LINE	0
+	   # - name: copy ssh key
+|3,0,2,1,1,0,1577720740,"   # - name: copy ssh key"
+"3	LINE	0
+	   #   shell: ssh-copy-id ansible@ "{{ item.public_dns_name }}"
+|3,0,3,1,1,0,1577720739,"   #   shell: ssh-copy-id ansible@ \"{{ item.public_dns_name }}\""
+"4	LINE	0
+	   #   with_items: "{{ ec2.instances }}"   
+|3,0,4,1,1,0,1577720739,"   #   with_items: \"{{ ec2.instances }}\"   "
+"5	LINE	0
+	   #
+|3,0,5,1,1,0,1577720738,"   #"
+"6	LINE	0
+	   # - name: copy ssh key
+|3,0,6,1,1,0,1577720738,"   # - name: copy ssh key"
+"7	LINE	0
+	   #   authorized_key:
+|3,0,7,1,1,0,1577720738,"   #   authorized_key:"
+"8	LINE	0
+	   #           
+|3,0,8,1,1,0,1577720737,"   #           "
+"9	LINE	0
+	   #           user: ansible
+|3,0,9,1,1,0,1577720737,"   #           user: ansible"
+"-	CHAR	0
 	9
-|3,1,36,0,1,0,1574319587,"9"
+|3,0,36,0,1,0,1577718340,"9"
 
 # File marks:
-'0  12  25  /etc/apache2/sites-enabled/000-default.conf
-|4,48,12,25,1575291622,"/etc/apache2/sites-enabled/000-default.conf"
-'1  32  0  /etc/apache2/sites-enabled/000-default.conf
-|4,49,32,0,1575290337,"/etc/apache2/sites-enabled/000-default.conf"
-'2  32  0  /etc/apache2/sites-enabled/000-default.conf
-|4,50,32,0,1575290337,"/etc/apache2/sites-enabled/000-default.conf"
-'3  31  0  /etc/apache2/sites-enabled/000-default.conf
-|4,51,31,0,1575290168,"/etc/apache2/sites-enabled/000-default.conf"
-'4  31  0  /etc/apache2/sites-enabled/000-default.conf
-|4,52,31,0,1575290168,"/etc/apache2/sites-enabled/000-default.conf"
-'5  31  0  /etc/apache2/sites-enabled/000-default.conf
-|4,53,31,0,1575290168,"/etc/apache2/sites-enabled/000-default.conf"
-'6  31  0  /etc/apache2/sites-enabled/000-default.conf
-|4,54,31,0,1575290168,"/etc/apache2/sites-enabled/000-default.conf"
-'7  4  0  /etc/ansible/hosts
-|4,55,4,0,1575010801,"/etc/ansible/hosts"
-'8  24  34  /etc/sudoers
-|4,56,24,34,1574953694,"/etc/sudoers"
-'9  1  0  ~/.my.cnf
-|4,57,1,0,1574933142,"~/.my.cnf"
+'0  5  8  /root/bashscripting/tasks/root_user.sh
+|4,48,5,8,1579500182,"/root/bashscripting/tasks/root_user.sh"
+'1  4  38  /root/bashscripting/tasks/root_user.sh
+|4,49,4,38,1579500168,"/root/bashscripting/tasks/root_user.sh"
+'2  4  38  /root/bashscripting/tasks/root_user.sh
+|4,50,4,38,1579500168,"/root/bashscripting/tasks/root_user.sh"
+'3  4  19  /root/bashscripting/tasks/root_user.sh
+|4,51,4,19,1579500134,"/root/bashscripting/tasks/root_user.sh"
+'4  4  19  /root/bashscripting/tasks/root_user.sh
+|4,52,4,19,1579500134,"/root/bashscripting/tasks/root_user.sh"
+'5  4  27  /root/bashscripting/tasks/root_user.sh
+|4,53,4,27,1579500096,"/root/bashscripting/tasks/root_user.sh"
+'6  4  27  /root/bashscripting/tasks/root_user.sh
+|4,54,4,27,1579500096,"/root/bashscripting/tasks/root_user.sh"
+'7  4  27  /root/bashscripting/tasks/root_user.sh
+|4,55,4,27,1579500096,"/root/bashscripting/tasks/root_user.sh"
+'8  4  27  /root/bashscripting/tasks/root_user.sh
+|4,56,4,27,1579500096,"/root/bashscripting/tasks/root_user.sh"
+'9  1  5  /etc/ansible/hosts
+|4,57,1,5,1578306184,"/etc/ansible/hosts"
 
 # Jumplist (newest first):
--'  12  25  /etc/apache2/sites-enabled/000-default.conf
-|4,39,12,25,1575291622,"/etc/apache2/sites-enabled/000-default.conf"
--'  32  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,32,0,1575291609,"/etc/apache2/sites-enabled/000-default.conf"
--'  32  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,32,0,1575290337,"/etc/apache2/sites-enabled/000-default.conf"
--'  31  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,31,0,1575290317,"/etc/apache2/sites-enabled/000-default.conf"
--'  31  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,31,0,1575290317,"/etc/apache2/sites-enabled/000-default.conf"
--'  31  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,31,0,1575290168,"/etc/apache2/sites-enabled/000-default.conf"
--'  1  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,1,0,1575290147,"/etc/apache2/sites-enabled/000-default.conf"
--'  1  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,1,0,1575290147,"/etc/apache2/sites-enabled/000-default.conf"
--'  1  0  /etc/apache2/sites-enabled/000-default.conf
-|4,39,1,0,1575290147,"/etc/apache2/sites-enabled/000-default.conf"
--'  4  0  /etc/ansible/hosts
-|4,39,4,0,1575010801,"/etc/ansible/hosts"
--'  4  0  /etc/ansible/hosts
-|4,39,4,0,1575010801,"/etc/ansible/hosts"
--'  4  0  /etc/ansible/hosts
-|4,39,4,0,1575010801,"/etc/ansible/hosts"
--'  4  0  /etc/ansible/hosts
-|4,39,4,0,1575010801,"/etc/ansible/hosts"
--'  4  0  /etc/ansible/hosts
-|4,39,4,0,1575010801,"/etc/ansible/hosts"
--'  4  0  /etc/ansible/hosts
-|4,39,4,0,1575010801,"/etc/ansible/hosts"
--'  4  0  /etc/ansible/hosts
-|4,39,4,0,1575010801,"/etc/ansible/hosts"
--'  4  0  /etc/ansible/hosts
-|4,39,4,0,1575010801,"/etc/ansible/hosts"
--'  2  0  /etc/ansible/hosts
-|4,39,2,0,1575010786,"/etc/ansible/hosts"
--'  2  0  /etc/ansible/hosts
-|4,39,2,0,1575010786,"/etc/ansible/hosts"
--'  2  0  /etc/ansible/hosts
-|4,39,2,0,1575010786,"/etc/ansible/hosts"
--'  2  0  /etc/ansible/hosts
-|4,39,2,0,1575010786,"/etc/ansible/hosts"
--'  2  0  /etc/ansible/hosts
-|4,39,2,0,1575010786,"/etc/ansible/hosts"
--'  2  0  /etc/ansible/hosts
-|4,39,2,0,1575010786,"/etc/ansible/hosts"
--'  2  0  /etc/ansible/hosts
-|4,39,2,0,1575010786,"/etc/ansible/hosts"
--'  2  0  /etc/ansible/hosts
-|4,39,2,0,1575010786,"/etc/ansible/hosts"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  24  34  /etc/sudoers
-|4,39,24,34,1574953694,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  26  0  /etc/sudoers
-|4,39,26,0,1574953659,"/etc/sudoers"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  1  0  ~/.my.cnf
-|4,39,1,0,1574933142,"~/.my.cnf"
--'  29  35  /var/www/wordpress/wp-config.php
-|4,39,29,35,1574915632,"/var/www/wordpress/wp-config.php"
--'  29  35  /var/www/wordpress/wp-config.php
-|4,39,29,35,1574915632,"/var/www/wordpress/wp-config.php"
--'  29  35  /var/www/wordpress/wp-config.php
-|4,39,29,35,1574915632,"/var/www/wordpress/wp-config.php"
--'  29  35  /var/www/wordpress/wp-config.php
-|4,39,29,35,1574915632,"/var/www/wordpress/wp-config.php"
--'  29  35  /var/www/wordpress/wp-config.php
-|4,39,29,35,1574915632,"/var/www/wordpress/wp-config.php"
--'  29  35  /var/www/wordpress/wp-config.php
-|4,39,29,35,1574915632,"/var/www/wordpress/wp-config.php"
--'  29  35  /var/www/wordpress/wp-config.php
-|4,39,29,35,1574915632,"/var/www/wordpress/wp-config.php"
--'  29  35  /var/www/wordpress/wp-config.php
-|4,39,29,35,1574915632,"/var/www/wordpress/wp-config.php"
--'  29  35  /var/www/wordpress/wp-config.php
-|4,39,29,35,1574915632,"/var/www/wordpress/wp-config.php"
--'  29  35  /var/www/wordpress/wp-config.php
-|4,39,29,35,1574915632,"/var/www/wordpress/wp-config.php"
--'  29  35  /var/www/wordpress/wp-config.php
-|4,39,29,35,1574915632,"/var/www/wordpress/wp-config.php"
+-'  5  8  /root/bashscripting/tasks/root_user.sh
+|4,39,5,8,1579500182,"/root/bashscripting/tasks/root_user.sh"
+-'  4  38  /root/bashscripting/tasks/root_user.sh
+|4,39,4,38,1579500173,"/root/bashscripting/tasks/root_user.sh"
+-'  4  38  /root/bashscripting/tasks/root_user.sh
+|4,39,4,38,1579500168,"/root/bashscripting/tasks/root_user.sh"
+-'  4  19  /root/bashscripting/tasks/root_user.sh
+|4,39,4,19,1579500134,"/root/bashscripting/tasks/root_user.sh"
+-'  4  27  /root/bashscripting/tasks/root_user.sh
+|4,39,4,27,1579500096,"/root/bashscripting/tasks/root_user.sh"
+-'  1  0  /root/bashscripting/tasks/root_user.sh
+|4,39,1,0,1579500052,"/root/bashscripting/tasks/root_user.sh"
+-'  1  0  /root/bashscripting/tasks/root_user.sh
+|4,39,1,0,1579500052,"/root/bashscripting/tasks/root_user.sh"
+-'  1  0  /root/bashscripting/tasks/root_user.sh
+|4,39,1,0,1579500052,"/root/bashscripting/tasks/root_user.sh"
+-'  1  0  /root/bashscripting/tasks/root_user.sh
+|4,39,1,0,1579500052,"/root/bashscripting/tasks/root_user.sh"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  5  /etc/ansible/hosts
+|4,39,1,5,1578306184,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  1  0  /etc/ansible/hosts
+|4,39,1,0,1577783376,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  7  0  /etc/ansible/hosts
+|4,39,7,0,1577783355,"/etc/ansible/hosts"
+-'  3  0  /etc/ansible/hosts
+|4,39,3,0,1577783355,"/etc/ansible/hosts"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
+-'  64  0  ~/please/autoinv/tasks/main.yml
+|4,39,64,0,1577721891,"~/please/autoinv/tasks/main.yml"
 
 # History of marks within files (newest to oldest):
+
+> /root/bashscripting/tasks/root_user.sh
+	*	1579500181	0
+	"	5	8
+	^	5	9
+	.	5	8
+	+	4	9
+	+	3	21
+	+	4	20
+	+	6	8
+	+	4	30
+	+	6	3
+	+	4	33
+	+	5	8
+
+> /etc/ansible/hosts
+	*	1578306183	0
+	"	1	5
+	^	1	6
+	.	1	4
+	+	1	0
+	+	1	11
+	+	1	41
+	+	1	22
+	+	1	30
+	+	1	15
+	+	1	28
+	+	1	17
+	+	1	27
+	+	1	28
+	+	1	29
+	+	1	17
+	+	1	43
+	+	1	30
+	+	1	0
+	+	1	134
+	+	1	127
+	+	1	0
+	+	1	107
+	+	1	147
+	+	1	12
+	+	1	22
+	+	1	0
+	+	1	14
+	+	1	38
+	+	1	0
+	+	1	11
+	+	1	12
+	+	1	0
+	+	1	13
+	+	1	10
+	+	1	12
+	+	1	0
+	+	1	6
+	+	1	12
+	+	1	6
+	+	1	10
+	+	6	0
+	+	7	0
+	+	4	0
+	+	1	4
+
+> ~/please/autoinv/tasks/main.yml
+	*	1577721890	0
+	"	64	0
+	.	55	0
+	+	65	66
+	+	65	98
+	+	65	134
+	+	65	200
+	+	65	0
+	+	64	3
+	+	65	21
+	+	65	29
+	+	65	11
+	+	65	48
+	+	65	14
+	+	65	0
+	+	11	42
+	+	11	27
+	+	11	14
+	+	11	27
+	+	11	28
+	+	11	27
+	+	11	28
+	+	11	27
+	+	11	28
+	+	11	27
+	+	11	28
+	+	11	27
+	+	11	28
+	+	11	27
+	+	11	28
+	+	11	27
+	+	65	0
+	+	65	3
+	+	65	1
+	+	65	2
+	+	65	36
+	+	65	58
+	+	65	53
+	+	11	14
+	+	11	490
+	+	11	28
+	+	11	27
+	+	11	28
+	+	11	27
+	+	11	26
+	+	11	14
+	+	11	27
+	+	11	488
+	+	65	0
+	+	11	75
+	+	11	501
+	+	11	24
+	+	11	492
+	+	11	14
+	+	10	43
+	+	11	5
+	+	36	37
+	+	41	2
+	+	18	0
+	+	37	0
+	+	38	20
+	+	38	19
+	+	35	0
+	+	29	33
+	+	18	0
+	+	20	0
+	+	21	3
+	+	22	3
+	+	23	3
+	+	25	0
+	+	23	41
+	+	20	0
+	+	34	3
+	+	35	3
+	+	36	3
+	+	37	3
+	+	38	3
+	+	39	3
+	+	40	3
+	+	41	3
+	+	42	3
+	+	43	0
+	+	34	1
+	+	35	2
+	+	37	35
+	+	39	40
+	+	41	2
+	+	42	2
+	+	37	37
+	+	35	0
+	+	19	0
+	+	20	0
+	+	21	3
+	+	22	3
+	+	23	3
+	+	25	1
+	+	26	3
+	+	25	2
+	+	24	25
+	+	65	0
+	+	55	0
+
+> ~/please/autoinv/defaults/main.yml
+	*	1576655956	0
+	"	8	55
+	^	8	56
+	.	8	55
+	+	8	55
+	+	7	36
+	+	9	0
+	+	8	55
+
+> ~/please/autoinv/files/user_data.sh
+	*	1576651088	0
+	"	35	0
+	^	35	0
+	.	34	3
+	+	1	11
+	+	34	3
+
+> autoinv/tasks/main.yml
+	*	1576500793	0
+	"	1	0
+
+> /etc/passwd
+	*	1576163227	0
+	"	40	46
+	^	40	47
+	.	40	46
+	+	40	46
 
 > /etc/apache2/sites-enabled/000-default.conf
 	*	1575291619	0
@@ -262,28 +507,6 @@
 	+	12	30
 	+	32	0
 	+	12	25
-
-> /etc/ansible/hosts
-	*	1575010799	0
-	"	4	0
-	^	4	0
-	.	5	0
-	+	4	0
-	+	1	11
-	+	1	41
-	+	1	22
-	+	2	13
-	+	1	15
-	+	1	28
-	+	2	0
-	+	1	27
-	+	1	28
-	+	2	12
-	+	2	0
-	+	2	26
-	+	2	13
-	+	4	0
-	+	5	0
 
 > /etc/sudoers
 	*	1574953693	0
