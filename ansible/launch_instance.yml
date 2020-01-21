@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Launch instance
+      ec2:
+         aws_access_key: "AKIAZQBFUQLKOTBIJ53N"
+         aws_secret_key: "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"
+         image: ami-062f7200baf2fa504
+         wait: yes
+         instance_type: t2.micro
+         region: us-east-1   
+         count: 1
+         instance_tags:
+           Name: Ansible-Slave             
+      register: ec2

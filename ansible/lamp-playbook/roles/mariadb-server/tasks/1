@@ -1,0 +1,8 @@
+# tasks file for mysql
+---
+- name: 1.Install Mysql-Server
+  apt: name=mysql-server state=present
+
+
+- name: 2.Start Mysql Service
+  service: name=mysql state=started enabled=yes

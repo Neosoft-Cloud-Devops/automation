@@ -1,0 +1,23 @@
+---
+- name: MySQL setup
+  hosts: webservers
+  gather_facts: true
+  tasks:
+    - name: Ensure that Mysql is running and starts on boot
+      service: name=mysql state=started enabled=true
+
+    - name: Update Mysql root password for all root accounts
+      mysql_user: name=root host={{ item }} password={{ root_db_password }}
+      with_items:
+        - localhost
+        - 127.0.0.1
+
+    - name: Removes anonymous user account for localhost
+      mysql_user: name='' host={{ item }} state=absent
+      with_items:
+        - localhost
+        - 127.0.0.1
+      
+    - name: Remove the test database
+      mysql_db: name=test state=absent
+      

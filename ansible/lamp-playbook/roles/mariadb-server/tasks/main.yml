@@ -1,0 +1,31 @@
+# tasks file for mariadb-server
+---
+- name: 1.Install MariaDB server package
+  apt: name=mariadb-server state=present
+
+- name: 2(a).Start Mysql service
+  service: name=mysql state=started enabled=yes
+
+- name: 2(b).Install Python Mysql package #required for mysql_db tasks
+  apt: name=python-mysqldb state=present
+
+- name: 3.Create a new database
+  mysql_db: name=ansible_db state=present collation=utf88_general_ci
+
+- name: 4.Create a database user
+  mysql_user: name=ansible_user password=p@ssw0rd  priv=*.*:ALL host=localhost state=present
+
+- name: 5(a).Copy sample data
+  copy: src=dump.sql dest=/tmp/dump.sql
+
+- name: 5(b).Insert sample data
+  copy: cat /tmp/dump.sql | mysql -u ansible_user -pp@ssw0rd ansible_db
+
+- name: 6(a).Install Mysql extension for PHP
+  apt: name=php5-mysql state=present
+
+- name: 6(b).Restart Apache service
+  service: name=apache2 state=restarted
+
+- name: 7.Install Hello World PHP script with databasee
+  copy: src=db.php dest=/var/www/html/db.php mode=0664  

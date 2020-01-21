@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+   - name: create a new file
+     file: path=/home/webwerks/ansible/ansible.txt state=touch
+   - name: edit file
+     lineinfile: line="Here is world of Devops...Welcome to Neosoft Technologies" path=/home/webwerks/ansible/ansible.txt
+     register: lif_info
+   - debug: msg="{{lif_info}}"
+   - name: run a command
+     file:
+        name: /home/webwerks/ansible/ansible.txt
+        state: absent

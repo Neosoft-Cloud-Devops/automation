@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: false
+  tasks:
+
+          - name: Launch instance
+            ec2:
+                 aws_access_key: "AKIAZQBFUQLKOTBIJ53N"
+                 aws_secret_key: "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"
+                 image: ami-02ccb28830b645a41
+                 wait: yes
+                 instance_type: t2.micro
+                 region: us-east-2
+            register: ec2
