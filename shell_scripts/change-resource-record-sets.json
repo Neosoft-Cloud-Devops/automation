@@ -1,0 +1,20 @@
+{
+  "Comment": "optional comment about the changes in this change batch request",
+  "Changes": [
+    {
+      "Action": "CREATE"|"DELETE"|"UPSERT",
+      "ResourceRecordSet": {
+        "Name": "DNS domain name",
+        "Type": "SOA"|"A"|"TXT"|"NS"|"CNAME"|"MX"|"PTR"|"SRV"|"SPF"|"AAAA",
+        "TTL": time to live in seconds,
+        "ResourceRecords": [
+          {
+            "Value": "applicable value for the record type"
+          },
+          {...}
+        ]
+      }
+    },
+    {...}
+  ]
+}

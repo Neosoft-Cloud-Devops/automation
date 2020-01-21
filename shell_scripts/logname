@@ -1,0 +1,6 @@
+if [ "$LOGNAME"="webwerks" ]
+ then
+ printf "%s is logged in" $LOGNAME
+ else
+ printf "Sorry!"
+ fi 
