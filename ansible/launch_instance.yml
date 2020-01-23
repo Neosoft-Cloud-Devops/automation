@@ -4,8 +4,8 @@
   tasks:
     - name: Launch instance
       ec2:
-         aws_access_key: "AKIAZQBFUQLKOTBIJ53N"
-         aws_secret_key: "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"
+         aws_access_key: ""
+         aws_secret_key: ""
          image: ami-062f7200baf2fa504
          wait: yes
          instance_type: t2.micro
